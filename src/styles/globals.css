@@ -3,25 +3,113 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-bold: #1E1B24;
+  --primary-dark: #19181F;
+  --primary-soft: #1E1B24;
+  --primary-base: #23202A;
+  --primary-medium: #24212B;
+  --primary-light: #353140;
+  --primary-lighter: #575068;
+  --primary-script: #C2C6DD;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary-dark: #19181F;
+    --primary-base: #23202A;
+    --script-light: #C2C6DD;
+    --script-default: #FFFFFF;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary_dark: #19181F;
+    --primary_base: #23202A;
+    --script-light: #C2C6DD;
+    --script-default: #FFFFFF;
+  }
+} */
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ background: var(--primary_dark);
+ color: white;
+ font-size: 14px;
+ line-height: 1.25rem/
 }
+
+/* utilities class */
+  .flex-y {
+    @apply flex flex-col;
+  }
+
+  .flex-x_center {
+    @apply flex justify-center;
+  }
+
+  .flex-y_center {
+    @apply flex flex-col items-center;
+  }
+
+  .flex-xy_center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-x_between-y_center {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-x_between {
+    @apply flex justify-between;
+  }
+/* utilities class */
+
+/* text styles */
+
+.text-H1 {
+  @apply text-3xl lg:text-4xl 2xl:text-5xl 2xl:font-extrabold leading-none font-bold;
+}
+
+.text-H2 {
+  @apply text-2xl lg:text-3xl font-semibold;
+}
+
+.text-H3 {
+  @apply text-lg lg:text-xl font-semibold;
+}
+
+.text-paragraph {
+  @apply text-lg font-normal;
+}
+
+.text-small {
+  @apply text-base;
+}
+/* text styles */
+
+/* button styles */
+.btn-primary {
+  @apply bg-white rounded-full px-6 py-4 text-primary-dark font-semibold hover:bg-primary-script text-sm;
+}
+
+.btn-link {
+  @apply bg-primary-dark rounded-full px-6 py-4 text-white font-semibold hover:bg-primary-script text-sm;
+}
+
+.btn-icon {
+  @apply bg-primary-base rounded-lg px-2 py-[6px] hover:bg-primary-lighter;
+}
+
+.btn-icon:active {
+  transform: translateY(2px);
+}
+
+.avatar-sm {
+  @apply rounded-full object-cover w-3 h-3;
+}
+
+.link {
+  @apply cursor-pointer px-4 py-[6px] font-medium rounded-full;
+}
+/* button styles */
+

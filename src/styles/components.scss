@@ -1,0 +1,25 @@
+.customTabs {
+  .mantine-Tabs-root{
+    --_tab-border-color: unset;
+  }
+  .mantine-Tabs-list {
+    border-radius: 14px;
+    background-color: var(--primary-base);
+    padding: 0.3rem;
+  }
+
+  .mantine-Tabs-tab {
+    font-size: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    padding: 1rem 1.8rem;
+    &[data-active] {
+      background-color: var(--primary-dark);
+
+      @mixin hover {
+        color: var(--primary-script);
+      }
+    }
+  }
+  
+}
