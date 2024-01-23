@@ -38,8 +38,8 @@ export default function Home() {
         <FilterSection />
         <div className="flex flex-wrap justify-center gap-8 px-[5%] [background:linear-gradient(180deg,rgb(25,24,31)_0%,rgb(30,27,36)_100%)]">
           {
-            avatars.map(({ imgUrl }) => (
-              <div className=''>
+            avatars.map(({ imgUrl }, i) => (
+              <div key={i} className=''>
                 <AvatarCard imgUrl={imgUrl}  downloadUrl='' />
               </div>
             ))
