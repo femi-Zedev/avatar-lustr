@@ -18,13 +18,13 @@ const raceFilter = [
 export default function FilterSection() {
 
   return (
-    <section className='w-full h-full flex-y_center gap-6 py-20'>
+    <section id='#avatars' className='w-full h-full flex-y_center gap-6 py-20'>
       <h2 className="text-H2">Filtrer par:</h2>
 
 
       <span className='flex-y_center gap-4'>
         <p className="text-paragraph">Sexe</p>
-        <Tabs defaultValue="F" className="customTabs" unstyled >
+        <Tabs defaultValue="*" className="customTabs" unstyled >
           <Tabs.List>
             {
               sexeFilter.map((el) => (
@@ -39,7 +39,7 @@ export default function FilterSection() {
 
       <span className='flex-y_center gap-4'>
         <p className="text-paragraph">Race</p>
-        <Tabs defaultValue="afro" className="customTabs" unstyled >
+        <Tabs defaultValue="*" className="customTabs" unstyled >
           <Tabs.List>
             {
               raceFilter.map((el) => (

@@ -23,10 +23,9 @@ export default function CopyUrl({ textToCopy, htmlToDisplay }: CopyUrlProps) {
 
   }
   return (
-    <span className='rounded-2xl font-medium px-8 py-5 flex gap-6 items-center bg-primary-medium w-fit'>
+    <div className='hover:shadow-md shadow-primary-base cursor-pointer rounded-2xl font-medium px-4 lg:px-8 py-3 lg:py-5 flex gap-3 lg:gap-6 items-center bg-primary-medium max-w-[100%] md:max-w-none '>
 
-        {htmlToDisplay}
-     
+        <samp className='overflow-x-scroll'>{htmlToDisplay}</samp>
 
       <CopyButton value={textToCopy} timeout={2000}>
         {({ copied, copy }) => (
@@ -35,6 +34,6 @@ export default function CopyUrl({ textToCopy, htmlToDisplay }: CopyUrlProps) {
           </button>
         )}
       </CopyButton>
-    </span>
+    </div>
   )
 }

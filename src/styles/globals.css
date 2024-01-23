@@ -39,6 +39,15 @@ body {
 }
 
 /* utilities class */
+
+  .w-available{
+    width: -webkit-fill-available;
+  }
+
+  .contain{
+    contain: content;
+  }
+  
   .flex-y {
     @apply flex flex-col;
   }
@@ -108,8 +117,44 @@ body {
   @apply rounded-full object-cover w-3 h-3;
 }
 
+
 .link {
-  @apply cursor-pointer px-4 py-[6px] font-medium rounded-full;
+  @apply cursor-pointer font-medium bg-primary-base px-4 py-2 rounded-full;
 }
 /* button styles */
 
+
+/* shadows */
+/* make glowing box shadow: https://codepen.io/ahmad_hania/pen/rRPKbZ */
+.shadow-neon {
+  @apply shadow-[9px_2px_14px_3px_#39c0b01a,0px_4px_14px_3px_#426afb1a,0px_-4px_14px_3px_#e573731a];
+}
+
+@media (max-width: 1024px) {
+  .contribute-round{
+   @apply rounded-2xl
+  }
+}
+
+@media (min-width: 768px) {
+  .contribute-round{
+   @apply rounded-l-2xl
+  }
+}
+
+body::-webkit-scrollbar {
+	/* display: none; */
+	overflow-x: hidden;
+	margin-right: 10px;
+  margin-top: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: #C2C6DD;
+	border-radius: 8px;
+}
+
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 4px;
+}

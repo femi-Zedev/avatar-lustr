@@ -7,14 +7,13 @@ const links = [
   { label: 'Intro', link: '' },
   { label: 'Documentation', link: '' },
   { label: 'Avatar', link: '' },
-  { label: 'A propos', link: '' },
 
 ]
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark py-24 flex flex-col items-center justify-center gap-12">
-      <RateCard className='' />
-      <div className="flex flex-col items-center gap-4 mt-5">
+    <footer className="bg-primary-dark py-16 flex flex-col items-center justify-center gap-12">
+      <RateCard className='lg:border border-primary-base' />
+      <div className="flex flex-col items-center gap-4">
         <Logo />
         <div className="flex gap-6">
           {links.map(({ label, link }, i) => (
@@ -32,8 +31,8 @@ export default function Footer() {
 
 function RateCard({ className }: { className?: string }) {
   return (
-    <div className={`${className} bg-none rounded-2xl md:w-3/5 flex flex-col lg:flex-row shadow-lg shadow-primary-dark/50`} >
-      <span className="py-14 px-8 bg-primary-medium rounded-l-2xl  w-full lg:w-2/3">
+    <div className={`${className} bg-none rounded-2xl mx-[4%] md:w-3/5 flex flex-col lg:flex-row lg:hover:shadow-xl shadow-primary-dark/50`} >
+      <span className="py-14 px-8 bg-primary-medium contribute-round  w-full lg:w-2/3">
         <h3 className='text-H3'>
           Si ce service vous a été utile, n’hésitez pas à nous donner une étoile ⭐ sur️ github ou contribuer au projet.
         </h3>

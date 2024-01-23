@@ -1,40 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Avatar Lustr
+## Description du projet
+Avatar Lustr vise à être une banque d'illustration (style portrait) multi-usage.
 
-First, run the development server:
+## Fonctionnalités à mettre en place
+Les fonctionnalités à mettre en place sont entre autre:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Intégrer les chouettes animations de la [maquette](https://www.figma.com/file/IU1yadOW6RMUlc9ZzCvnZt/Avatar-placeholder?type=design&node-id=359%3A1484&mode=design&t=c5pLIbcIvDr1KrUT-1)
+- Télécharger en SVG/PNG une illustration
+- Requêter les différents endpoints pour obtenir des illustrations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📐 Petit tour de la Stack (voir package.json)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- 🔥 **NextJS** - version 14.0.4 **page router**
+- 🏂 **Framer-motion** pour des animations fluides
+- 🍞 **MantineUI** - librairie de composants UI et hooks
+- 💅 **Tailwind CSS** - pour le CSS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Comment contribuer
+1. Forker le projet
+2. Choisir une fonctionnalités et créer une branche avec en préfixe **feat-** suivi du **nom de la branche** (**feat-[le nom de la branche]**) . Ex: **feat-animations**
+3. Apporter votre contribution au projet
+4. Pusher vos changements
+5. Ouvrir une **Pull Request** avec une petite description des changements apportés
+6. Voir sa **PR** mergée 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Ressources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ - [Maquette](https://www.figma.com/file/IU1yadOW6RMUlc9ZzCvnZt/Avatar-placeholder?type=design&node-id=359%3A1484&mode=design&t=c5pLIbcIvDr1KrUT-1)
+ - [Demo](https://github.com/femi-Zedev)
+ - [Me contacter](www.linkedin.com/in/femi-akotonou)
