@@ -25,7 +25,7 @@ export default function ApiSection() {
           htmlToDisplay={
             <pre>
               <code className='text-indigo-500'>{'<img src='}</code>
-              <code className="text-green-600">{"}https://avatarlustr.io/public{"}</code>
+              <code className="text-green-600">{`"https://avatarlustr.io/public"`}</code>
               <code className='text-indigo-500'>{' />'}</code>
             </pre>
           }

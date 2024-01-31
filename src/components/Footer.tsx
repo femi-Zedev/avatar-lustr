@@ -11,7 +11,7 @@ const links = [
 ]
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark py-16 flex flex-col items-center justify-center gap-12">
+    <footer className="bg-primary-dark py-16 flex flex-col items-center justify-center gap-8  md:gap-12">
       <RateCard className='lg:border border-primary-base' />
       <div className="flex flex-col items-center gap-4">
         <Logo />

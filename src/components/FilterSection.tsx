@@ -2,17 +2,17 @@ import { Tabs } from '@mantine/core'
 import React from 'react';
 
 const sexeFilter = [
+  { label: 'Tous', value: "*" },
   { label: 'Homme', value: "M" },
   { label: 'Femme', value: "F" },
-  { label: 'Tous', value: "*" },
 ]
 
 const raceFilter = [
+  { label: 'Tous', value: "*" },
   { label: 'Afro', value: "afro" },
   { label: 'Asiat', value: "asiat" },
   { label: 'Amérindien', value: "amérindien" },
   { label: 'Caucasien', value: "caucasien" },
-  { label: 'Tous', value: "*" },
 ]
 
 export default function FilterSection() {
