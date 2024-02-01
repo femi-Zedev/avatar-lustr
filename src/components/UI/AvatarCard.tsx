@@ -23,20 +23,18 @@ function AuthorMenu({ }) {
   )
 }
 export default function AvatarCard({ imgUrl, author }: AvatarProps) {
-  const [showButtons, setShowButtons] = useState(false)
+  
   return (
     <div
-      onMouseEnter={() => setShowButtons(true)}
-      onMouseLeave={() => setShowButtons(false)}
-      className='relative cursor-pointer rounded-2xl lg:rounded-3xl px-4 py-2 bg-primary-medium flex-y_center w-full md:w-fit lg:!w-60 '>
+      className='relative cursor-pointer group rounded-2xl lg:rounded-3xl px-4 py-2 bg-primary-medium flex-y_center w-full md:w-fit lg:!w-60 '>
       <span className="hidden lg:flex w-full relative h-6">
-        <button className={`${showButtons ? "opacity-100" : "opacity-0"} absolute btn-icon right-0 top-4`} >
+        <button className={`opacity-0 group-hover:opacity-100 absolute btn-icon right-0 top-4`} >
           <LuCopy size="1.2rem" />
         </button>
       </span>
       <img className='w-28 md:w-36 mt-4 mb-8 lg:mt-0' src={imgUrl} />
       <span className="hidden absolute bottom-3 px-4 lg:flex justify-between items-center w-full mt-2">
-        <button className={`${showButtons ? "opacity-100" : "opacity-0"} lg:flex items-center gap-2 transition-opacity  cursor-pointer`} >
+        <button className={`opacity-0 group-hover:opacity-100 lg:flex items-center gap-2 transition-opacity  cursor-pointer`} >
           <Menu withArrow width={200} trigger='click-hover' shadow="md" radius="lg" position='top'>
             <Menu.Target>
               <Avatar size="32px" src='https://api.dicebear.com/7.x/adventurer/svg?seed=Simba&backgroundColor=b6e3f4' />
@@ -47,7 +45,7 @@ export default function AvatarCard({ imgUrl, author }: AvatarProps) {
           </Menu>
           <p className='font-medium text-sm'>{author}</p>
         </button>
-        <button className={`${showButtons ? "opacity-100" : "opacity-0"} btn-icon`} >
+        <button className={`opacity-0 group-hover:opacity-100 btn-icon`} >
           <LuDownload size="1.2rem" />
         </button>
       </span>

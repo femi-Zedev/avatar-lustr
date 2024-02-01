@@ -1,5 +1,5 @@
-.customTabs {
-  .mantine-Tabs-root{
+// Mantine Tabs
+  .mantine-Tabs-root {
     --_tab-border-color: unset;
   }
   .mantine-Tabs-list {
@@ -21,5 +21,21 @@
       }
     }
   }
-  
+// Mantine Tabs
+
+// Mantine Select
+
+.mantine-Select-input {
+  border-radius: 8px;
+  background: var(--primary-base);
 }
+.mantine-Select-input:focus-within {
+  border-color: white;
+}
+
+.mantine-Select-dropdown {
+  border-radius: 8px;
+  background: var(--primary-base);
+}
+
+// Mantine Tabs

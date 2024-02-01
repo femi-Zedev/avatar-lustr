@@ -1,4 +1,5 @@
-import { Tabs } from '@mantine/core'
+import { Select, Tabs } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks';
 import React from 'react';
 
 const sexeFilter = [
@@ -22,38 +23,48 @@ export default function FilterSection() {
       <h2 className="text-H2">Filtrer par:</h2>
 
 
-      <span className='flex-y_center gap-4'>
-        <p className="text-paragraph">Sexe</p>
-        <Tabs defaultValue="*" className="customTabs" unstyled >
-          <Tabs.List>
-            {
-              sexeFilter.map((el) => (
-                <Tabs.Tab  key={el.label}value={el.value} style={{ }} >
-                  {el.label}
-                </Tabs.Tab>
-              ))
-            }
-          </Tabs.List>
-        </Tabs>
-      </span>
-
-      <span className='flex-y_center gap-4'>
-        <p className="text-paragraph">Race</p>
-        <Tabs defaultValue="*" className="customTabs" unstyled >
-          <Tabs.List>
-            {
-              raceFilter.map((el) => (
-                <Tabs.Tab key={el.label} value={el.value} style={{ }} >
-                  {el.label}
-                </Tabs.Tab>
-              ))
-            }
-          </Tabs.List>
-        </Tabs>
-      </span>
-
-
+      <Filter filterTitle='Sexe' filterArray={sexeFilter} />
+      <Filter filterTitle='Race' filterArray={raceFilter} />
 
     </section>
+  )
+}
+
+
+function Filter({ filterArray, filterTitle }: { filterTitle: string, filterArray: { label: string, value: string }[] }) {
+
+  const md = useMediaQuery("(min-width: 768px)");
+
+  return (
+    <>
+      {md ?
+        <span className='w-full px-4 flex-y_center gap-4'>
+          <p className="text-paragraph">{filterTitle}</p>
+          <Tabs defaultValue="*" unstyled >
+            <Tabs.List>
+              {
+                filterArray.map((el) => (
+                  <Tabs.Tab key={el.label} value={el.value} >
+                    {el.label}
+                  </Tabs.Tab>
+                ))
+              }
+            </Tabs.List>
+          </Tabs>
+        </span>
+        :
+        <hgroup className='flex flex-col items-center gap-2'>
+          <p className='text-paragraph'>{filterTitle}</p>
+          <Select
+            size='md'
+            defaultValue="*"
+            placeholder="Sélectionnez un filtre"
+            data={filterArray}
+          />
+        </hgroup>
+
+      }
+    </>
+
   )
 }
