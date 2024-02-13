@@ -6,3 +6,11 @@ export interface AvatarProps {
   race: 'caucasien' | 'oceanien' | 'afro' | 'asiat' | 'amerindien';
   author: string
 }
+
+export interface RaceFilter {
+  race: string;
+}
+
+export interface SexeFilter {
+  sexe: string;
+}
