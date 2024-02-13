@@ -1,46 +1,55 @@
+import { RaceFilter, SexeFilter } from '@/interfaces/avatar';
 import { Select, Tabs } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks';
 import React from 'react';
 
-const sexeFilter = [
+interface FilterValueProp {
+  label: string;
+  value: string
+}
+
+const sexeFilter: FilterValueProp[] = [
   { label: 'Tous', value: "*" },
-  { label: 'Homme', value: "M" },
-  { label: 'Femme', value: "F" },
+  { label: 'Homme', value: "male" },
+  { label: 'Femme', value: "female" },
 ]
 
-const raceFilter = [
+const raceFilter: FilterValueProp[] = [
   { label: 'Tous', value: "*" },
   { label: 'Afro', value: "afro" },
   { label: 'Asiat', value: "asiat" },
-  { label: 'Amérindien', value: "amérindien" },
+  { label: 'Amérindien', value: "amerindien" },
   { label: 'Caucasien', value: "caucasien" },
 ]
 
-export default function FilterSection() {
+export default function FilterSection({onFilterChange}: {onFilterChange: (filter: RaceFilter | SexeFilter) => void }) {
 
   return (
     <section id='#avatars' className='w-full h-full flex-y_center gap-6 py-20'>
       <h2 className="text-H2">Filtrer par:</h2>
-
-
-      <Filter filterTitle='Sexe' filterArray={sexeFilter} />
-      <Filter filterTitle='Race' filterArray={raceFilter} />
-
+      <Filter onChange={(filter) => onFilterChange(filter as RaceFilter | SexeFilter)} filterTitle='Sexe' filterArray={sexeFilter} />
+      <Filter onChange={(filter) => onFilterChange(filter  as RaceFilter | SexeFilter)} filterTitle='Race' filterArray={raceFilter} />
     </section>
   )
 }
 
 
-function Filter({ filterArray, filterTitle }: { filterTitle: string, filterArray: { label: string, value: string }[] }) {
+function Filter({ filterArray, filterTitle, onChange }: { filterTitle: string, filterArray: FilterValueProp[], onChange: (filter: object) => void}) {
 
   const md = useMediaQuery("(min-width: 768px)");
+
+  function handleFilterChange(key: string, value: string | null){
+    let object: { [key: string]: string | null } = {};
+    object[key.toLocaleLowerCase()] = value;
+    onChange(object)
+  }
 
   return (
     <>
       {md ?
         <span className='w-full px-4 flex-y_center gap-4'>
           <p className="text-paragraph">{filterTitle}</p>
-          <Tabs defaultValue="*" unstyled >
+          <Tabs defaultValue="*" unstyled onChange={(value) => handleFilterChange(filterTitle, value) }>
             <Tabs.List>
               {
                 filterArray.map((el) => (
@@ -62,7 +71,6 @@ function Filter({ filterArray, filterTitle }: { filterTitle: string, filterArray
             data={filterArray}
           />
         </hgroup>
-
       }
     </>
 

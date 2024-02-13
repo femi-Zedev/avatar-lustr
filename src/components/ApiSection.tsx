@@ -43,7 +43,7 @@ export default function ApiSection() {
             title="Avatar masculin"
             seeAll_link='/avatar?homme'
             seeAll_text='voir tous les avatars masculin'
-            avatar_url='/avatars/oceanien-H.svg'
+            avatar_url='/avatars/1.svg'
             api_url='https://avatarlustr.io/public/homme'
           />
 
@@ -51,7 +51,7 @@ export default function ApiSection() {
             title="Avatar féminin"
             seeAll_link='/avatar?femme'
             seeAll_text='voir tous les avatars féminins'
-            avatar_url='/avatars/oceanien-F.svg'
+            avatar_url='/avatars/2.svg'
             api_url='https://avatarlustr.io/public/femme'
           />
 
@@ -59,19 +59,19 @@ export default function ApiSection() {
 
           <AvatarAPI
             title="Avatar aléatoire d’une race"
-            avatar_url='/avatars/caucasien-H.svg'
+            avatar_url='/avatars/8.svg'
             api_url='https://avatarlustr.io/public/?race=caucasien'
           />
 
           <AvatarAPI
             title="Avatar masculin d’une race"
-            avatar_url='/avatars/afro-H.svg'
+            avatar_url='/avatars/1.svg'
             api_url='https://avatarlustr.io/public/homme?race=afro'
           />
 
           <AvatarAPI
             title="Avatar féminin d’une race"
-            avatar_url='/avatars/afro-F.svg'
+            avatar_url='/avatars/2.svg'
             api_url='https://avatarlustr.io/public/femme?race=afro'
           />
 
