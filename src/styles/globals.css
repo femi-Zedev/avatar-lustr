@@ -31,6 +31,10 @@
   }
 } */
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
  background: var(--primary_dark);
  color: white;

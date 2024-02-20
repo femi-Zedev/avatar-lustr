@@ -10,8 +10,8 @@ interface FilterValueProp {
 
 const sexeFilter: FilterValueProp[] = [
   { label: 'Tous', value: "*" },
-  { label: 'Homme', value: "male" },
-  { label: 'Femme', value: "female" },
+  { label: 'Homme', value: "homme" },
+  { label: 'Femme', value: "femme" },
 ]
 
 const raceFilter: FilterValueProp[] = [
@@ -25,7 +25,7 @@ const raceFilter: FilterValueProp[] = [
 export default function FilterSection({onFilterChange}: {onFilterChange: (filter: RaceFilter | SexeFilter) => void }) {
 
   return (
-    <section id='#avatars' className='w-full h-full flex-y_center gap-6 py-20'>
+    <section id='#avatars' className='w-full h-full flex-y_center gap-6 pt-10'>
       <h2 className="text-H2">Filtrer par:</h2>
       <Filter onChange={(filter) => onFilterChange(filter as RaceFilter | SexeFilter)} filterTitle='Sexe' filterArray={sexeFilter} />
       <Filter onChange={(filter) => onFilterChange(filter  as RaceFilter | SexeFilter)} filterTitle='Race' filterArray={raceFilter} />
@@ -48,7 +48,7 @@ function Filter({ filterArray, filterTitle, onChange }: { filterTitle: string, f
     <>
       {md ?
         <span className='w-full px-4 flex-y_center gap-4'>
-          <p className="text-paragraph">{filterTitle}</p>
+          {/* <p className="text-paragraph">{filterTitle}</p> */}
           <Tabs defaultValue="*" unstyled onChange={(value) => handleFilterChange(filterTitle, value) }>
             <Tabs.List>
               {
