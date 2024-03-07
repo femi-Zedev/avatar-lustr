@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import AvatarCard from '@/components/UI/AvatarCard';
 import { avatarsArray } from '@/data/avatars';
 import { AvatarProps } from '@/interfaces/avatar';
+import { sexeType, useFilter } from '@/providers/filter.provider';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
@@ -29,8 +30,9 @@ export default function Avatars() {
   const router = useRouter()
 
   const query = router.query;
+  const { setSexe, setRace } = useFilter()
 
-  console.log(query)
+
   
   useEffect(() => {
     setAvatars(avatarsArray)
@@ -39,6 +41,13 @@ export default function Avatars() {
   useEffect(() => {
     if ('sexe' in query) {
       handleFilter({ sexe: query.sexe as string })
+      setSexe(query.sexe as sexeType)
+      // call filter hook
+    }
+    if ('race' in query) {
+      handleFilter({ race: query.race as string })
+      setRace(query.race as string)
+      // call filter hook
     }
   }, [query])
 

@@ -10,7 +10,7 @@ export default function Navbar() {
   const { width } = useViewportSize();
 
   useEffect(() => {
-    console.log(router.asPath.substring(1))
+    console.log(router.asPath)
   }, [router.asPath])
 
 
@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link
                 href={item.link}
                 legacyBehavior
-                className={`${router.asPath.substring(1) == item.link ? 'link bg-primary-base text-white ' : 'text-primary-script'}   `}
+                className={`px-2 py-1 ${router.asPath == item.link ? 'link  text-green-500 ' : 'text-primary-script'}   `}
                 key={i}>
                 {item.label}
               </Link>
