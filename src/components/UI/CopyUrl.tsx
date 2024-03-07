@@ -20,8 +20,8 @@ export default function CopyUrl({ textToCopy, htmlToDisplay }: CopyUrlProps) {
       color: 'teal',
       message: "Url copié vous pouvez le coller maintenant",
     })
-
   }
+  
   return (
     <div className='hover:shadow-md shadow-primary-base cursor-pointer rounded-2xl font-medium px-4 lg:px-8 py-3 lg:py-5 flex gap-3 lg:gap-6 items-center bg-primary-medium max-w-[100%] md:max-w-none '>
 

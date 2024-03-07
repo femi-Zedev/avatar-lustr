@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function IntroSection() {
   return (
-    <section id='#intro' className='px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-10'>
+    <section id='intro' className='px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-10'>
 
       <div className="w-full text-center lg:text-left grid grid-cols-12 bg-primary-base rounded-3xl gap-5  px-8 lg:px-20 py-6 lg:py-16">
 

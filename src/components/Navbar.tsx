@@ -10,15 +10,14 @@ export default function Navbar() {
   const { width } = useViewportSize();
 
   useEffect(() => {
-    console.log(router.asPath.substring(1))
+    console.log(router.asPath)
   }, [router.asPath])
 
 
   const navLinks = [
-    { label: 'Intro', link: '#intro' },
-    { label: 'Avatars', link: '#avatars' },
-    { label: 'Documentation', link: '#api' },
-    // { label: 'A propos', link: '#info' },
+    { label: 'Intro', link: '/#intro' },
+    { label: 'Avatars', link: '/avatars' },
+    { label: 'Documentation', link: '/#api' },
   ]
 
   return (
@@ -30,7 +29,8 @@ export default function Navbar() {
             {navLinks.map((item, i) => (
               <Link
                 href={item.link}
-                className={`${router.asPath.substring(1) == item.link ? 'link bg-primary-base text-white ' : 'text-primary-script'}   `}
+                legacyBehavior
+                className={`px-2 py-1 ${router.asPath == item.link ? 'link  text-green-500 ' : 'text-primary-script'}   `}
                 key={i}>
                 {item.label}
               </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
           </ul>
 
           <a href='' className='p-3 rounded-full bg-primary-medium'>
-            <IoLogoGithub className="w-7 h-7 lg:h-14 lg:w-14 fill-white" />
+            <IoLogoGithub className="w-7 h-7 lg:h-10 lg:w-10 fill-white" />
           </a>
 
         </>}

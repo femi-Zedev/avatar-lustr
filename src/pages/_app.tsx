@@ -7,6 +7,7 @@ import '@/styles/globals.css'
 import '@/styles/components.scss'
 import '@mantine/notifications/styles.css';
 import { Notifications } from '@mantine/notifications'
+import FilterProvider from '@/providers/filter.provider';
 
 
 
@@ -35,7 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
           />
           <link rel="shortcut icon" href="/favicon.svg" />
         </Head>
-        <Component {...pageProps} />
+        <FilterProvider>
+          <Component {...pageProps} />
+        </FilterProvider>
       </MantineProvider>
     </>
   )

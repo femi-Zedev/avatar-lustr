@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function ApiSection() {
   return (
-    <section id='#api' className="px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-14 text-center bg-primary-bold text-primary-script">
+    <section id='api' className="px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-14 text-center bg-primary-bold text-primary-script">
       <h1 className='text-H1 text-white'>Comment utiliser l’API ?</h1>
       <hgroup className='flex-y gap-8 mt-10'>
         <p className="text-paragraph">
@@ -44,6 +44,7 @@ export default function ApiSection() {
             seeAll_link='/avatar?homme'
             seeAll_text='voir tous les avatars masculin'
             avatar_url='/avatars/1.svg'
+            query='sexe=homme'
             api_url='https://avatarlustr.io/public/homme'
           />
 
@@ -52,6 +53,7 @@ export default function ApiSection() {
             seeAll_link='/avatar?femme'
             seeAll_text='voir tous les avatars féminins'
             avatar_url='/avatars/2.svg'
+            query='sexe=femme'
             api_url='https://avatarlustr.io/public/femme'
           />
 
@@ -88,15 +90,16 @@ interface AvatarAPIProps {
   title: string,
   avatar_url: string,
   api_url: string,
+  query?: string,
   seeAll_link?: string
   seeAll_text?: string
 }
 
-function AvatarAPI({ title, avatar_url, api_url, seeAll_link, seeAll_text }: AvatarAPIProps) {
+function AvatarAPI({ title, avatar_url, api_url, seeAll_link, query, seeAll_text }: AvatarAPIProps) {
   return (
     <hgroup className='flex-y items-center gap-4 w-full'>
         <h3 className="text-H3">{title}</h3>
-        {seeAll_link && <Link href='' className='text-indigo-500'>({seeAll_text})</Link>}
+        {seeAll_link && <Link href={{ pathname: '/avatars', query: query }} className='text-indigo-500'>({seeAll_text})</Link>}
         <Image alt='' src={avatar_url} height={170} width={170} />
         <CopyUrl htmlToDisplay={<pre>{api_url}</pre> } textToCopy={api_url} />
     </hgroup>
