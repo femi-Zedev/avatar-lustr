@@ -2,8 +2,11 @@ import { AvatarProps } from '@/interfaces/avatar';
 import { Avatar, CopyButton, Menu, Tooltip } from '@mantine/core'
 import React, { useState } from 'react'
 import { LuCopy, LuDownload } from "react-icons/lu";
-import { FaInstagram } from "react-icons/fa6";
+import { FaImage, FaInstagram } from "react-icons/fa6";
+import { FaRegFileImage, FaRegImage } from "react-icons/fa";
+import { BsCardImage, BsFileEarmarkImage, BsFiletypeSvg } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
+import { RxLink1 } from "react-icons/rx";
 import { notifications } from '@mantine/notifications';
 
 function AuthorMenu({ }) {
@@ -48,9 +51,26 @@ export default function AvatarCard({ imgUrl, author, link }: AvatarProps) {
       <span className="hidden lg:flex w-full relative h-6">
         <CopyButton value={link} key={2000} >
           {({ copied, copy }) => (
-            <button className={`${show ? 'opacity-100' : 'opacity-0'} absolute btn-icon right-0 top-4`} onClick={() => handleCopy(copy)}>
-              <LuCopy size="1.2rem" />
-            </button>
+            <Menu shadow="md" radius="md" width={200}>
+              <Menu.Target>
+                <button className={`${show ? 'opacity-100' : 'opacity-0'} absolute btn-icon right-0 top-4`}>
+                  <LuCopy size="1.2rem" />
+                </button>
+              </Menu.Target>
+
+              <Menu.Dropdown onMouseLeave={() => {}} className='bg-primary-base' >
+                <Menu.Label>Copier</Menu.Label>
+                <Menu.Item leftSection={<BsCardImage />} className='flex items-center hover:bg-primary-light rounded'>
+                  en tant que PNG
+                </Menu.Item>
+                <Menu.Item leftSection={<BsFiletypeSvg />} className='flex items-center hover:bg-primary-light rounded'>
+                  en tant que SVG
+                </Menu.Item>
+                <Menu.Item leftSection={<RxLink1/>} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopy(copy)}>
+                  l'url de l'illustration
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
           )}
         </CopyButton>
 
