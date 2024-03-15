@@ -8,6 +8,7 @@ import { BsCardImage, BsFileEarmarkImage, BsFiletypeSvg } from "react-icons/bs";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { RxLink1 } from "react-icons/rx";
 import { notifications } from '@mantine/notifications';
+import { convertSVGtoPNG } from '@/helpers/imageConverter';
 
 function AuthorMenu({ }) {
   return (
@@ -32,15 +33,70 @@ function AuthorMenu({ }) {
 export default function AvatarCard({ imgUrl, author, link }: AvatarProps) {
 
   const [show, setShow] = useState(false)
+  const [copyMenuOpen, setOpenCopyMenu] = useState(false)
 
-  function handleCopy(copy: Function) {
-    copy();
+  function handleCopy(imgUrl: string) {
+    navigator.clipboard.writeText(process.env.NEXT_PUBLIC_BASE_URL+'/'+imgUrl);
     notifications.show({
-      id: 'ds',
+      id: 'link-copy',
       title: 'Lien copié',
       color: 'teal',
       message: "Url copié vous pouvez le coller maintenant",
     })
+  }
+
+  function handleCopyAsImage(type: 'svg' | 'png', link: string) {
+    switch (type) {
+      case 'svg':
+        copyAsSvg(link).then(() => {
+          notifications.show({
+            id: 'svg-copy',
+            title: 'Image copiée',
+            color: 'teal',
+            message: "L'illustration à été copiée vous pouvez la coller maintenant",
+          })
+        })
+
+        break;
+
+        case 'png': 
+        copyAsPng(link).then(()=>{
+          notifications.show({
+            id: 'svg-copy',
+            title: 'Image copiée',
+            color: 'teal',
+            message: "L'illustration à été copiée vous pouvez la coller maintenant",
+          })
+        })
+
+      default:
+        break;
+    }
+  }
+
+  async function copyAsSvg(imgUrl: string) {
+    try {
+      const response = await fetch(imgUrl);
+      const svgContent = await response.text();
+      navigator.clipboard.writeText(svgContent);
+      console.log(svgContent)
+    } catch (error) {
+      console.error('Error:', error);
+    }  
+  }
+
+ async function copyAsPng(imgUrl: string){
+    try {
+      const blob = await convertSVGtoPNG(imgUrl);
+      console.log('Converted PNG:', blob);
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          [blob.type]: blob
+        })
+      ]);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
   return (
@@ -50,33 +106,31 @@ export default function AvatarCard({ imgUrl, author, link }: AvatarProps) {
       className='relative cursor-pointer rounded-2xl lg:rounded-3xl px-4 py-2 bg-primary-medium flex-y_center w-full md:w-fit lg:!w-60 '>
       <span className="hidden lg:flex w-full relative h-6">
         <CopyButton value={link} key={2000} >
-          {({ copied, copy }) => (
-            <Menu shadow="md" radius="md" width={200}>
+          {({ copy }) => (
+            <Menu opened={copyMenuOpen} onChange={setOpenCopyMenu} shadow="md" radius="md" width={200}>
               <Menu.Target>
-                <button className={`${show ? 'opacity-100' : 'opacity-0'} absolute btn-icon right-0 top-4`}>
+                <button onClick={() => setOpenCopyMenu(true)} className={`absolute btn-icon right-0 top-4 ${copyMenuOpen && 'bg-primary-lighter '} ${(show || copyMenuOpen) ? 'opacity-100' : 'opacity-0'} `}>
                   <LuCopy size="1.2rem" />
                 </button>
               </Menu.Target>
 
-              <Menu.Dropdown onMouseLeave={() => {}} className='bg-primary-base' >
+              <Menu.Dropdown className='bg-primary-base' >
                 <Menu.Label>Copier</Menu.Label>
-                <Menu.Item leftSection={<BsCardImage />} className='flex items-center hover:bg-primary-light rounded'>
+                <Menu.Item leftSection={<BsCardImage />} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopyAsImage('png', `./${imgUrl}`)} >
                   en tant que PNG
                 </Menu.Item>
-                <Menu.Item leftSection={<BsFiletypeSvg />} className='flex items-center hover:bg-primary-light rounded'>
+                <Menu.Item leftSection={<BsFiletypeSvg />} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopyAsImage('svg', `./${imgUrl}`)} >
                   en tant que SVG
                 </Menu.Item>
-                <Menu.Item leftSection={<RxLink1/>} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopy(copy)}>
+                <Menu.Item leftSection={<RxLink1 />} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopy(imgUrl)}>
                   l'url de l'illustration
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
           )}
         </CopyButton>
-
-
-
       </span>
+
       <img className='w-28 md:w-36 mt-4 mb-8 lg:mt-0' src={imgUrl} />
       <span className="hidden absolute bottom-3 px-4 lg:flex justify-between items-center w-full mt-2">
         <button className={`${show ? 'opacity-100' : 'opacity-0'} lg:flex items-center gap-2 transition-opacity  cursor-pointer`} >
