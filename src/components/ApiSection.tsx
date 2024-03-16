@@ -9,7 +9,7 @@ export default function ApiSection() {
     <section id='api' className="px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-14 text-center bg-primary-bold text-primary-script">
       <h1 className='text-H1 text-white'>Comment utiliser l’API ?</h1>
 
-      <h2 className="text-H2 text-teal-500 font-extrabold mt-4">L'API est bientôt là ...</h2>
+      <h2 className="text-H2 text-teal-500 font-extrabold mt-4">L&lsquo;API est bientôt là ...</h2>
 
       {/* <hgroup className='flex-y gap-8 mt-10'>
         <p className="text-paragraph">
