@@ -45,5 +45,4 @@ const SVGtoPNGConverter: React.FC<SVGtoPNGConverterProps> = ({ svgUrl }) => {
   );
 };
 
-
 export default SVGtoPNGConverter;

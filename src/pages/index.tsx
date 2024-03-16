@@ -1,11 +1,8 @@
 import Navbar from '@/components/Navbar'
 import IntroSection from '@/components/IntroSection'
-import FilterSection from '@/components/FilterSection'
 import Footer from '@/components/Footer'
 import AvatarCard from '@/components/UI/avatar-card/AvatarCard'
 import ApiSection from '@/components/ApiSection'
-import { AvatarProps } from '@/interfaces/avatar'
-import { useEffect, useState } from 'react'
 import { avatarsArray } from '@/data/avatars'
 import Link from 'next/link'
 
