@@ -8,7 +8,10 @@ export default function ApiSection() {
   return (
     <section id='api' className="px-[4%] lg:px-[6%] 2xl:px-[10%] w-full py-14 text-center bg-primary-bold text-primary-script">
       <h1 className='text-H1 text-white'>Comment utiliser l’API ?</h1>
-      <hgroup className='flex-y gap-8 mt-10'>
+
+      <h2 className="text-H2 text-teal-500 font-extrabold mt-4">L&lsquo;API est bientôt là ...</h2>
+
+      {/* <hgroup className='flex-y gap-8 mt-10'>
         <p className="text-paragraph">
           Grâce à cette API gratuite, les développeurs et designers
           peuvent utiliser <br /> des avatars aléatoires en fonction de la race
@@ -79,7 +82,7 @@ export default function ApiSection() {
 
         </div>
 
-      </div>
+      </div> */}
 
 
 

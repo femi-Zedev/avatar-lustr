@@ -1,7 +1,7 @@
 import FilterSection from '@/components/FilterSection'
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import AvatarCard from '@/components/UI/AvatarCard';
+import AvatarCard from '@/components/UI/avatar-card/AvatarCard';
 import { avatarsArray } from '@/data/avatars';
 import { AvatarProps } from '@/interfaces/avatar';
 import { sexeType, useFilter } from '@/providers/filter.provider';
