@@ -93,7 +93,7 @@ export default function CopyMenu({show, imgUrl}:{show:boolean, imgUrl: string}) 
         en tant que SVG
       </Menu.Item>
       <Menu.Item leftSection={<RxLink1 />} className='flex items-center hover:bg-primary-light rounded' onClick={() => handleCopy(imgUrl)}>
-        l'url de l'illustration
+        l&lsquo;url de l&lsquo;illustration
       </Menu.Item>
     </Menu.Dropdown>
   </Menu>
