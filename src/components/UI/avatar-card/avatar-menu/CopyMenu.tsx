@@ -56,7 +56,6 @@ export default function CopyMenu({show, imgUrl}:{show:boolean, imgUrl: string}) 
       const response = await fetch(imgUrl);
       const svgContent = await response.text();
       navigator.clipboard.writeText(svgContent);
-      console.log(svgContent)
     } catch (error) {
       console.error('Error:', error);
     }  
@@ -65,7 +64,6 @@ export default function CopyMenu({show, imgUrl}:{show:boolean, imgUrl: string}) 
  async function copyAsPng(imgUrl: string){
     try {
       const blob = await convertSVGtoPNG(imgUrl);
-      console.log('Converted PNG:', blob);
       await navigator.clipboard.write([
         new ClipboardItem({
           [blob.type]: blob

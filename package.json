@@ -12,6 +12,7 @@
     "@mantine/core": "^7.3.2",
     "@mantine/hooks": "^7.3.2",
     "@mantine/notifications": "^7.3.2",
+    "framer-motion": "^11.0.21",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
