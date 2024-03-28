@@ -39,7 +39,7 @@ export default function Navbar() {
                 <motion.nav initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} transition={{ duration: 0.5 }} className="flex flex-col mt-4 gap-2 items-end" >
 
                   {navLinks.map((item, i) => (
-                    <motion.div initial={{ x: -70, y: 0 }} animate={{ x: 0, y: 0 }} exit={{ x: -70, y: 0, opacity: 0 }}>
+                    <motion.div key={i} initial={{ x: -70, y: 0 }} animate={{ x: 0, y: 0 }} exit={{ x: -70, y: 0, opacity: 0 }}>
                       <Link
                         href={item.link}
                         className={`px-2 py-1 ${router.asPath == item.link ? 'font-medium text-lg' : 'text-primary-script'}   `}
