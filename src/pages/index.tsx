@@ -11,7 +11,7 @@ export default function Home() {
   const avatarsSample = avatarsArray.slice(0, 10);
 
   return (
-    <main className="bg-primary-dark">
+    <main className="bg-primary-dark relative">
       <Navbar />
       <div className="w-full h-full">
         <IntroSection />

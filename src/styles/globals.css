@@ -100,6 +100,12 @@ body {
 }
 /* text styles */
 
+/* Custom classes */
+.bgBlured {
+  background: hsla(0, 0%, 7%, .25);
+  backdrop-filter: blur(12px);
+}
+
 /* button styles */
 .btn-primary {
   @apply bg-white rounded-full px-6 py-4 text-primary-dark font-semibold hover:bg-primary-script text-sm;
@@ -123,7 +129,7 @@ body {
 
 
 .link {
-  @apply cursor-pointer font-medium bg-primary-soft px-4 py-2 rounded-full;
+  @apply cursor-pointer font-medium bg-primary-medium px-4 py-2 rounded-full;
 }
 /* button styles */
 
