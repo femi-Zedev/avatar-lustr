@@ -9,9 +9,9 @@ export default function RateCard({ className }: { className?: string }) {
         </h3>
       </span>
       <span className='py-10 px-10 bg-primary-dark rounded-r-2xl  flex items-center justify-center w-full lg:w-1/3'>
-        <button className="btn-primary !font-bold">
+        <a href='https://github.com/femi-Zedev/avatar-lustr' target='_blank' className="btn-primary !font-bold text-center">
           Donner une étoile
-        </button>
+        </a>
       </span>
     </div>
   )

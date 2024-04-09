@@ -20,7 +20,7 @@ export default function Footer({ withRate = true }: { withRate?: boolean }) {
             <Link className='text-paragraph hover:underline' href={link} key={i}>{label}</Link>
           ))}
         </div>
-        <a href='' className='p-3 my-3 rounded-full bg-primary-medium'>
+        <a href='https://github.com/femi-Zedev/avatar-lustr' target='_blank' className='p-3 my-3 rounded-full bg-primary-medium'>
           <IoLogoGithub size={26} className="fill-primary-script" />
         </a>
         <p className='text-paragraph text-primary-script'> AvatarLustr v1.0 © 2024</p>
