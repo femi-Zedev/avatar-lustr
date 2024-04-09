@@ -77,7 +77,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <a href='' className='p-3 rounded-full bg-primary-medium'>
+          <a href='https://github.com/femi-Zedev/avatar-lustr' target='_blank' className='p-3 rounded-full bg-primary-medium'>
             <IoLogoGithub className="w-7 h-7 lg:h-10 lg:w-10 fill-white" />
           </a>
 
