@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function IntroSection() {
@@ -14,8 +14,8 @@ export default function IntroSection() {
           </span>
 
           <span className='flex flex-col lg:flex-row gap-8'>
-            <button className="btn-primary">Parcourir</button>
-            <a href="" className='btn-link'>En savoir plus</a>
+            <Link href='/avatars' className="btn-primary">Parcourir</Link>
+            <a href="https://github.com/femi-Zedev/avatar-lustr" className='btn-link'>En savoir plus</a>
           </span>
         </hgroup>
 
