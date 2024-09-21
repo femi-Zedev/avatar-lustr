@@ -31,5 +31,5 @@ Les fonctionnalités à mettre en place sont entre autre:
 ## Ressources
  - <a href="https://www.figma.com/file/IU1yadOW6RMUlc9ZzCvnZt/Avatar-placeholder?type=design&node-id=359%3A1484&mode=design&t=c5pLIbcIvDr1KrUT-1" target="_blank">Maquette et prototype </a>
  - <a href="https://avatarlustr.netlify.app](https://avatar-lustr.vercel.app/" target="_blank">Demo</a>
- - <a href="www.linkedin.com/in/femi-akotonou" target="_blank">Me contacter</a>
+ - <a href="https://www.linkedin.com/in/femi-akotonou-3b8882183/" target="_blank">Me contacter</a>
  
