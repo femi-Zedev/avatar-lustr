@@ -29,7 +29,7 @@ Les fonctionnalités à mettre en place sont entre autre:
 
 
 ## Ressources
-
- - [Maquette et prototype](https://www.figma.com/file/IU1yadOW6RMUlc9ZzCvnZt/Avatar-placeholder?type=design&node-id=359%3A1484&mode=design&t=c5pLIbcIvDr1KrUT-1)
- - [Demo](https://avatarlustr.netlify.app)
- - [Me contacter](www.linkedin.com/in/femi-akotonou)
+ - <a href="https://www.figma.com/file/IU1yadOW6RMUlc9ZzCvnZt/Avatar-placeholder?type=design&node-id=359%3A1484&mode=design&t=c5pLIbcIvDr1KrUT-1)" target="_blank">Maquette et prototype</a>
+ - <a href="https://avatarlustr.netlify.app" target="_blank">Demo</a>
+ - <a href="www.linkedin.com/in/femi-akotonou" target="_blank">Me contacter</a>
+ 
